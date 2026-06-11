@@ -1,9 +1,16 @@
+<div align="center">
+  <h1>⚙️ C-PreCompiler</h1>
+  
+  <p>
+    <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C" />
+    <img src="https://img.shields.io/badge/GCC-A100FF?style=for-the-badge&logo=gnu&logoColor=white" alt="GCC" />
+    <img src="https://img.shields.io/badge/CLI_Tool-4D4D4D?style=for-the-badge&logo=gnubash&logoColor=white" alt="CLI" />
+  </p>
 
----
+  <p><i>Un tool a riga di comando scritto in C che effettua il parsing, il pre-processamento e l'analisi di base di file sorgente C.</i></p>
+</div>
 
-## ⚙️ C-PreCompiler
-
-Un tool a riga di comando scritto in C che effettua il parsing, il pre-processamento e l'analisi di base di file sorgente C. Il programma funge da pre-compilatore in grado di risolvere ricorsivamente le dipendenze, rimuovere i commenti, compattare il codice e validare la sintassi degli identificatori delle variabili.
+Il programma funge da pre-compilatore in grado di risolvere ricorsivamente le dipendenze, rimuovere i commenti, compattare il codice e validare la sintassi degli identificatori delle variabili.
 
 Il programma legge un file di input, risolve le direttive `#include` locali (ignorando le librerie standard), elimina i commenti (singola e multi-riga), rimuove le righe vuote e produce un output pulito, stampandolo a schermo o salvandolo in un file. Include inoltre un sistema di reportistica visiva molto dettagliato per l'analisi del codice.
 
@@ -19,6 +26,23 @@ Basato sull'analisi del codice sorgente fornito, questo tool offre le seguenti f
 * **Validazione della Sintassi delle Variabili:** Isola le dichiarazioni di variabili, ignorando costrutti come i cast espliciti, e verifica che gli identificatori rispettino gli standard del C (iniziare con lettera o underscore, contenere solo caratteri alfanumerici, non superare i 31 caratteri e non essere *keyword* riservate).
 * **Output Flessibile:** Genera il file pre-processato in un file di destinazione (tramite `-o`/`--out=`) oppure stampa direttamente su `stdout`.
 * **Statistiche Verbose (ad Albero):** Tramite il flag `-v`/`--verbose`, il programma stampa su `stderr` una struttura ad albero molto dettagliata che mostra le dimensioni, le righe e i commenti rimossi per ogni file analizzato, oltre a un resoconto preciso delle variabili corrette e degli errori rilevati (puntando all'errore specifico con una grafica a freccia `^~~~`).
+
+---
+
+## 📂 Struttura del Progetto
+
+```text
+C-PreCompiler/
+├── funzioni.c      # Logica core (lettura, stringhe, parser, statistiche)
+├── funzioni.h      # Strutture dati, prototipi e costanti
+├── main.c          # Entry point e coordinamento
+├── README.md       # Documentazione
+├── test1.c         # File sorgente di test
+├── test1.h         # Header di test
+├── test2.c         # File sorgente di test
+├── test2.h         # Header di test
+└── test2.1.h       # Header di test (inclusioni multiple)
+```
 
 ---
 
